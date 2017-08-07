@@ -1,0 +1,32 @@
+{
+  "name": "grayscale",
+  "version": "0.1.0",
+  "description": "trying to re-create my old idea in ES6 and Phaser 3",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Zielak/GrayScaleNew.git"
+  },
+  "keywords": [
+    "game"
+  ],
+  "author": "Darek Greenly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zielak/GrayScaleNew/issues"
+  },
+  "homepage": "https://github.com/Zielak/GrayScaleNew#readme",
+  "dependencies": {
+    "phaser": "^3.0.0-alpha.2"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^2.30.1",
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.6.1"
+  }
+}
