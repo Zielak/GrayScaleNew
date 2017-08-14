@@ -9,11 +9,13 @@ const config = {
   height: 600,
   scene: {
     preload: preload,
-    create: create
+    create: create,
+    update: update,
   }
 }
 
 const game = new Phaser.Game(config)
+let player, cursors
 
 function preload() {
   this.load.image('logo', 'assets/logo.png')
@@ -22,7 +24,9 @@ function preload() {
 
 function create() {
   
-  var player = Player(this)
+  cursors = this.input.keyboard.createCursorKeys()
+  player = new Player(this, 100, 100)
+  player.cursors = cursors
   
   var logo = this.add.image(400, 150, 'logo')
 
@@ -35,4 +39,8 @@ function create() {
     loop: -1
   })
 
+}
+
+function update(time, delta) {
+  player.update(time)
 }

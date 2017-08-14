@@ -1,17 +1,27 @@
 import Phaser from 'phaser'
 
-const Scene = Phaser.Scene
-
-/**
- * Factory to create a player?
- * 
- * @export
- * @param {Scene} scene 
- */
-export default function Player(scene, x = 0, y = 0) {
+export default new Phaser.Class({
   
-  const player = scene.add.image(x, y, 'player')
+  Extends: Phaser.GameObjects.Image,
   
-  return player
+  initialize: function (scene, x = 0, y = 0) {
+    Phaser.GameObjects.Image.call(this, scene)
+    
+    this.setTexture('player')
+    this.setPosition(x, y)
+    this.setOrigin(0)
+    
+    this.x = x
+    this.y = y
+    
+    scene.children.add(this)
+  },
   
-}
+  update: function (time) {
+    if (this.cursors) {
+      // do something on keypress
+    }
+  },
+  
+  cursors: null
+})
